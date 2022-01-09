@@ -54,14 +54,25 @@
         android:inputType="textPassword"
         android:minHeight="60dp" />
 
-    <Button
+    <TextView
+        android:id="@+id/register_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPassword"
+        android:layout_toStartOf="@+id/btrRegister"
+        android:text="New Here? "
+        android:textAllCaps="false" />
+
+    <TextView
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
         android:id="@+id/btrRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register Now"
         android:layout_below="@+id/etPassword"
         android:layout_alignParentEnd="true"
-        android:textAllCaps="false"/>
+        android:text="Register"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/loginButton"

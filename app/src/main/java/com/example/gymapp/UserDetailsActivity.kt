@@ -19,6 +19,7 @@ class UserDetailsActivity : AppCompatActivity() {
     private lateinit var heightText: EditText
     private lateinit var weightText: EditText
     private lateinit var ageText: EditText
+    private var iconIndex: String = "0"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +28,7 @@ class UserDetailsActivity : AppCompatActivity() {
         val database = FirebaseDatabase.getInstance()
         databaseReference = database.getReference("users")
 
-        var addUserDataButton: Button = findViewById(R.id.btAddUserData)
+        val addUserDataButton: Button = findViewById(R.id.btAddUserData)
 
         auth = FirebaseAuth.getInstance()
         firstNameText = findViewById(R.id.etFirstName)
@@ -36,55 +37,73 @@ class UserDetailsActivity : AppCompatActivity() {
         weightText = findViewById(R.id.etWeight)
         ageText = findViewById(R.id.etAge)
 
-        addUserDataButton.setOnClickListener(){
+
+        addUserDataButton.setOnClickListener() {
             addUserData()
         }
 
     }
 
-    private fun addUserData(){
+    private fun addUserData() {
         val username = intent.getStringExtra("username")
         val email = intent.getStringExtra("email")
-        if (firstNameText.text.toString().isEmpty()){
+        iconIndex = intent.getStringExtra("iconIndex").toString()
+
+        if (firstNameText.text.toString().isEmpty()) {
             firstNameText.error = "Please enter valid First name"
             firstNameText.requestFocus()
             return
         }
-        if (lastNameText.text.toString().isEmpty()){
+        if (lastNameText.text.toString().isEmpty()) {
             lastNameText.error = "Please enter valid Last name"
             lastNameText.requestFocus()
             return
         }
-        if (heightText.text.toString().isEmpty() || Integer.parseInt(heightText.text.toString()) <= 0){
+        if (heightText.text.toString()
+                .isEmpty() || Integer.parseInt(heightText.text.toString()) <= 0
+        ) {
             heightText.error = "Please enter valid Height"
             heightText.requestFocus()
             return
         }
-        if (weightText.text.toString().isEmpty() || Integer.parseInt(weightText.text.toString()) <= 0){
+        if (weightText.text.toString()
+                .isEmpty() || Integer.parseInt(weightText.text.toString()) <= 0
+        ) {
             weightText.error = "Please enter valid Weight"
             weightText.requestFocus()
             return
         }
-        if (ageText.text.toString().isEmpty() || Integer.parseInt(ageText.text.toString()) <= 0){
+        if (ageText.text.toString().isEmpty() || Integer.parseInt(ageText.text.toString()) <= 0) {
             ageText.error = "Please enter valid Age"
             ageText.requestFocus()
             return
         }
-        val user = User(auth.currentUser!!.uid, username,email,firstNameText.text.toString(),lastNameText.text.toString(),Integer.parseInt(heightText.text.toString()),Integer.parseInt(weightText.text.toString()),Integer.parseInt(ageText.text.toString()))
+        val user = User(
+            auth.currentUser!!.uid,
+            username,
+            email,
+            firstNameText.text.toString(),
+            lastNameText.text.toString(),
+            Integer.parseInt(heightText.text.toString()),
+            Integer.parseInt(weightText.text.toString()),
+            Integer.parseInt(ageText.text.toString()),
+            0.0,
+            0.0,
+            iconIndex
+        )
         try {
-        databaseReference.push().setValue(user).addOnCompleteListener(this){
-                task ->
-            if (task.isSuccessful){
-                Log.d("Success", "created user")
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
-            } else{
-                Toast.makeText(baseContext, "Sign Up Failed.", Toast.LENGTH_SHORT).show()
+            databaseReference.push().setValue(user).addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Log.d("Success", "created user")
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(baseContext, "Sign Up Failed.", Toast.LENGTH_SHORT).show()
+                }
             }
-        }
-    } catch (e: Exception) {
+        } catch (e: Exception) {
 
-        Log.d("Error", e.toString())
-    }
+            Log.d("Error", e.toString())
+        }
     }
 }

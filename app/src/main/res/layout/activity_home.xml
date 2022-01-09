@@ -4,29 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:menu="@menu/my_menu">
 
-    <Button
-        android:id="@+id/btLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LOGOUT"
-        android:layout_centerHorizontal="true"/>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            app:titleTextColor="@color/white"
+            app:title="@string/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/appbar"
+        android:layout_above="@+id/dashboard"
+        android:id="@+id/idRVTodos"
         android:layout_width="match_parent"
-        tools:listitem="@layout/todo_rv_item"
         android:layout_height="match_parent"
-        android:layout_below="@+id/btLogout"
-        android:id="@+id/idRVTodos"/>
+        tools:listitem="@layout/todo_rv_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/idFABAddTodo"
+        android:layout_above="@+id/dashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/idFABAddTodo"
         android:layout_margin="20dp"
-        android:src="@drawable/ic_add"/>
+        android:src="@drawable/ic_add" />
+
+    <Button
+        android:id="@+id/dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:text="Dashboard"
+        android:textAllCaps="false" />
 
 </RelativeLayout>

@@ -7,6 +7,7 @@ import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import java.lang.Exception
@@ -21,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
 
-        val registerButton: Button = findViewById(R.id.btrRegister)
+        val registerButton: TextView = findViewById(R.id.btrRegister)
         auth = FirebaseAuth.getInstance()
         emailText = findViewById(R.id.etEmail)
         passwordText = findViewById(R.id.etPassword)

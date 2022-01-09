@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
+import androidx.core.widget.TextViewOnReceiveContentListener
 import com.google.firebase.auth.FirebaseAuth
 import org.w3c.dom.Text
 import java.lang.Exception
@@ -18,6 +17,16 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var emailText: EditText
     private lateinit var nameText: EditText
     private lateinit var passwordText: EditText
+    private lateinit var iconView: ImageView
+
+    var counter = 0
+
+    private val listIcons = listOf<Int>(
+        R.drawable.ic1,
+        R.drawable.ic2,
+        R.drawable.ic3,
+        R.drawable.ic4,
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +36,9 @@ class RegisterActivity : AppCompatActivity() {
         emailText = findViewById(R.id.etRegisterEmail)
         nameText = findViewById(R.id.etName)
         passwordText = findViewById(R.id.etRegisterPassword)
+        iconView = findViewById(R.id.register_userIcon)
 
-        val loginButton: Button = findViewById(R.id.btLogin)
+        val loginButton: TextView = findViewById(R.id.btLogin)
         val nextButton: Button = findViewById(R.id.btNext)
 
         loginButton.setOnClickListener() {
@@ -36,7 +46,17 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
 
-        nextButton.setOnClickListener() {
+        iconView.setOnClickListener {
+            if(counter>=listIcons.size-1){
+                counter = 0
+            }
+            else{
+                counter++
+            }
+            iconView.setImageResource(listIcons[counter])
+        }
+
+        nextButton.setOnClickListener{
             signUpUser()
         }
 
@@ -67,6 +87,8 @@ class RegisterActivity : AppCompatActivity() {
                     Intent(this, UserDetailsActivity::class.java).also {
                         it.putExtra("username", nameText.text.toString())
                         it.putExtra("email", emailText.text.toString())
+                        it.putExtra("iconIndex", counter.toString())
+
                         startActivity(it)
                     }
                 } else{

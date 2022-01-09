@@ -20,19 +20,28 @@
         android:id="@+id/tvSignUpSub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let's Hop right in!"
         android:layout_below="@+id/tvJoinTitle"
-        android:textSize="18dp"
-        android:textColor="@color/grey"/>
+        android:text="Let's Hop right in!"
+        android:textColor="@color/grey"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic1"
+        android:id="@+id/register_userIcon"
+        android:layout_below="@+id/tvSignUpSub"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
 
     <EditText
         android:id="@+id/etName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvSignUpSub"
+        android:layout_below="@+id/register_userIcon"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:hint="Enter your username"
         android:inputType="textPersonName"
@@ -64,14 +73,25 @@
         android:inputType="textPassword"
         android:minHeight="60dp" />
 
-    <Button
+    <TextView
+        android:id="@+id/login_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etRegisterPassword"
+        android:layout_toStartOf="@+id/btLogin"
+        android:text="Already Have an Account? "
+        android:textAllCaps="false" />
+
+    <TextView
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
         android:id="@+id/btLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login Now"
         android:layout_below="@+id/etRegisterPassword"
         android:layout_alignParentEnd="true"
-        android:textAllCaps="false"/>
+        android:text="Login Here!"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btNext"

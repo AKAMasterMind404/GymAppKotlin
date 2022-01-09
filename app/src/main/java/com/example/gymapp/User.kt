@@ -11,4 +11,5 @@ data class User(
     val age: Int? = null,
     val caloriesGained: Double? = 0.0,
     val caloriesBurn: Double? = 0.0,
+    val iconIndex:String? = "0"
 )
