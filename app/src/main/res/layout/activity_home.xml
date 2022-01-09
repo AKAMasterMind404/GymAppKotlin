@@ -13,29 +13,20 @@
         android:text="LOGOUT"
         android:layout_centerHorizontal="true"/>
 
-    <FrameLayout
-        android:layout_below="@+id/btLogout"
-        android:id="@+id/frame_layout"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
+        tools:listitem="@layout/todo_rv_item"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btLogout"
+        android:id="@+id/idRVTodos"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/idFABAddTodo"
-        android:layout_above="@id/bottomNavMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:id="@+id/idFABAddTodo"
         android:layout_margin="20dp"
         android:src="@drawable/ic_add"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        app:menu="@menu/bottom_menu"
-        android:id="@+id/bottomNavMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@id/frame_layout"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp" />
 
 </RelativeLayout>

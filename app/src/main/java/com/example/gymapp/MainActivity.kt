@@ -4,9 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.FrameLayout
-import androidx.fragment.app.FragmentTransaction
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -19,17 +16,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         auth = FirebaseAuth.getInstance()
+
     }
 
     public override fun onStart() {
         super.onStart()
 
         val currentUser = auth.currentUser
-        if (currentUser == null) {
+        if (currentUser == null){
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
-        } else {
+        } else{
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
