@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/purple_500"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/idTVTodoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:text="Todo Title"
+            android:textColor="@color/white"
+            android:layout_toLeftOf="@id/idTVCheckBox"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idTVTimestamp"
+            android:text="Timestamp"
+            android:textColor="@color/white"
+            android:layout_below="@id/idTVCheckBox"
+            android:layout_toLeftOf="@id/idTVDelete"
+            android:padding="4dp"
+            android:layout_margin="4dp"/>
+
+        <CheckBox
+            android:id="@+id/idTVCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/idTVDelete"
+            android:layout_centerVertical="true"
+            android:buttonTint="@color/white"
+            android:checked="false"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            android:id="@+id/idTVDelete"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:padding="4dp"/>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

@@ -32,10 +32,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        updateUI(currentUser)
+//        updateUI(currentUser)
     }
 
-    fun updateUI(currentUser: FirebaseUser?){
-
-    }
+//    fun updateUI(currentUser: FirebaseUser?){
+//
+//    }
 }

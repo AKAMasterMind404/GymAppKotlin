@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         registerButton.setOnClickListener() {
-            val intent = Intent(this, RegisterActivity::class.java).also {
+            Intent(this, RegisterActivity::class.java).also {
                 it.putExtra("atharv", "yeda")
                 startActivity(it)
                 finish()
@@ -60,6 +60,7 @@ class LoginActivity : AppCompatActivity() {
                     Log.d("Success", "created user")
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
+                    finish()
                 } else{
                     Toast.makeText(baseContext, "Sign In Failed.", Toast.LENGTH_SHORT).show()
                 }

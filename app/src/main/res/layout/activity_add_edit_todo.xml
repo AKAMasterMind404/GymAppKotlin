@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEditTodoActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idEdtTodoTitle"
+        android:hint="Enter Todo Title"
+        android:layout_margin="10dp"
+        android:importantForAutofill="no"
+        android:inputType="text" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/idEdtTodoDescription"
+        android:hint="Enter Todo Description"
+        android:layout_margin="10dp"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:gravity="start|top"
+        android:singleLine="false"
+        android:layout_above="@id/idBtnAddUpdate"
+        android:layout_below="@id/idEdtTodoTitle"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idBtnAddUpdate"
+        android:layout_margin="20dp"
+        android:layout_alignParentBottom="true"
+        android:text="Add Todo"/>
+
+</RelativeLayout>

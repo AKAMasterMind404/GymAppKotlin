@@ -64,7 +64,7 @@ class RegisterActivity : AppCompatActivity() {
                     task ->
                 if (task.isSuccessful){
                     Log.d("Success", "created user")
-                    val intent = Intent(this, UserDetailsActivity::class.java).also {
+                    Intent(this, UserDetailsActivity::class.java).also {
                         it.putExtra("username", nameText.text.toString())
                         it.putExtra("email", emailText.text.toString())
                         startActivity(it)

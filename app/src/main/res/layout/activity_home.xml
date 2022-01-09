@@ -4,20 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hello"
-        android:layout_centerInParent="true" />
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_centerInParent="true"
-        android:text="LOGOUT" />
+        android:text="LOGOUT"
+        android:layout_centerHorizontal="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        tools:listitem="@layout/todo_rv_item"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btLogout"
+        android:id="@+id/idRVTodos"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/idFABAddTodo"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_add"/>
+
 </RelativeLayout>
