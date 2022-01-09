@@ -62,6 +62,7 @@ class AddEditTodoActivity : AppCompatActivity() {
                 }
             }
             startActivity(Intent(applicationContext, MainActivity::class.java))
+            finish()
         }
     }
 }

@@ -1,10 +1,14 @@
 package com.example.gymapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +24,7 @@ class HomeActivity : AppCompatActivity(), TodoClickInterface, TodoClickDeleteInt
     lateinit var viewModel: TodoViewModel
     private lateinit var auth: FirebaseAuth
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -48,11 +53,11 @@ class HomeActivity : AppCompatActivity(), TodoClickInterface, TodoClickDeleteInt
         addFAB.setOnClickListener{
             val intent = Intent(this@HomeActivity, AddEditTodoActivity::class.java)
             startActivity(intent)
-            this.finish()
         }
 
 
     }
+
 
     override fun onTodoClick(todo: Todo) {
         val intent = Intent(this@HomeActivity, AddEditTodoActivity::class.java)
@@ -62,7 +67,6 @@ class HomeActivity : AppCompatActivity(), TodoClickInterface, TodoClickDeleteInt
         intent.putExtra("noteID", todo.id)
 
         startActivity(intent)
-        this.finish()
 
     }
 
@@ -77,6 +81,7 @@ class HomeActivity : AppCompatActivity(), TodoClickInterface, TodoClickDeleteInt
         updateTodo.id = todo.id
         updateTodo.todoDone = !todo.todoDone
         viewModel.updateTodo(updateTodo)
+
     }
 
 
