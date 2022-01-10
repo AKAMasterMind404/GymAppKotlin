@@ -13,7 +13,7 @@ Introducing "GymApp" a one stop tracking app for fitness enthusiasts and workoho
 Keep track of your weight, and calories burnt everytime you track a workout/activity. With GymApp you can keep a track of your calorie intake, your daily schedule and make
 yourself a better, healthier individual.
 
-<img width="559" alt="sampleimages" src="https://raw.githubusercontent.com/AKAMasterMind404/GymAppKotlin/main/images/9_combined.png">
+<img width="559" alt="sampleimages" src="https://raw.githubusercontent.com/AKAMasterMind404/GymAppKotlin/main/images/10_combined.png">
     	  	
 <b> Functionality & Concepts used : </b>
 
