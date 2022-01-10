@@ -21,7 +21,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
         val registerButton: TextView = findViewById(R.id.btrRegister)
         auth = FirebaseAuth.getInstance()
         emailText = findViewById(R.id.etEmail)

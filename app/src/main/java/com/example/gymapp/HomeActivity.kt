@@ -31,7 +31,6 @@ class HomeActivity : AppCompatActivity(), TodoClickInterface, TodoClickDeleteInt
         todosRV = findViewById(R.id.idRVTodos)
         addFAB = findViewById(R.id.idFABAddTodo)
         dashboardButton = findViewById(R.id.dashboard)
-        todosRV.layoutManager = LinearLayoutManager(this)
 
         actionBar?.show()
 
@@ -42,7 +41,7 @@ class HomeActivity : AppCompatActivity(), TodoClickInterface, TodoClickDeleteInt
 //            auth.signOut()
 //            startActivity(Intent(this, MainActivity::class.java))
 //        }
-
+        todosRV.layoutManager = LinearLayoutManager(this)
         val todoRVAdapter = TodoRVAdapter(this, this, this, this)
         todosRV.adapter = todoRVAdapter
         viewModel = ViewModelProvider(

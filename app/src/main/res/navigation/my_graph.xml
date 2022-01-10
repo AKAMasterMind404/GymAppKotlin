@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_frag1_to_frag2"
             app:destination="@id/frag2" />
+        <action
+            android:id="@+id/action_frag1_to_globeFragment"
+            app:destination="@id/globeFragment" />
     </fragment>
     <fragment
         android:id="@+id/frag2"
@@ -20,6 +23,15 @@
         tools:layout="@layout/fragment_frag2" >
         <action
             android:id="@+id/action_frag2_to_frag1"
+            app:destination="@id/frag1" />
+    </fragment>
+    <fragment
+        android:id="@+id/globeFragment"
+        android:name="com.example.gymapp.globeFragment"
+        android:label="fragment_globe"
+        tools:layout="@layout/fragment_globe" >
+        <action
+            android:id="@+id/action_globeFragment_to_frag1"
             app:destination="@id/frag1" />
     </fragment>
 </navigation>

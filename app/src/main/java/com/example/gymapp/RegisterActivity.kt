@@ -21,7 +21,7 @@ class RegisterActivity : AppCompatActivity() {
 
     var counter = 0
 
-    private val listIcons = listOf<Int>(
+    private val listIcons = listOf(
         R.drawable.ic1,
         R.drawable.ic2,
         R.drawable.ic3,
@@ -59,7 +59,6 @@ class RegisterActivity : AppCompatActivity() {
         nextButton.setOnClickListener{
             signUpUser()
         }
-
 
     }
 

@@ -30,7 +30,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/settings2_bar"
+        android:id="@+id/globeUsers2_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile_1_bar"
@@ -41,7 +41,7 @@
             android:id="@+id/icon_2"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_settings" />
+            android:src="@drawable/ic_globe" />
 
         <TextView
             android:id="@+id/text_option2"
@@ -50,7 +50,7 @@
             android:layout_centerInParent="true"
             android:layout_toEndOf="@+id/icon_2"
             android:paddingStart="10dp"
-            android:text="Settings"
+            android:text="Users"
             android:textSize="20sp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -59,7 +59,7 @@
         android:id="@+id/signOut3_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/settings2_bar"
+        android:layout_below="@+id/globeUsers2_bar"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp">
 

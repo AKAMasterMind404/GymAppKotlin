@@ -37,8 +37,7 @@ class UserDetailsActivity : AppCompatActivity() {
         weightText = findViewById(R.id.etWeight)
         ageText = findViewById(R.id.etAge)
 
-
-        addUserDataButton.setOnClickListener() {
+        addUserDataButton.setOnClickListener{
             addUserData()
         }
 
@@ -92,7 +91,7 @@ class UserDetailsActivity : AppCompatActivity() {
             iconIndex
         )
         try {
-            databaseReference.push().setValue(user).addOnCompleteListener(this) { task ->
+            databaseReference.child(auth.currentUser!!.uid).setValue(user).addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d("Success", "created user")
                     val intent = Intent(this, HomeActivity::class.java)

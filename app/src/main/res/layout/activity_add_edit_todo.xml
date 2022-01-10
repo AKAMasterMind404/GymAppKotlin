@@ -10,30 +10,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/idEdtTodoTitle"
-        android:hint="Enter Todo Title"
+        android:hint="Enter Activity Title"
         android:layout_margin="10dp"
         android:importantForAutofill="no"
         android:inputType="text" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/idEdtTodoDescription"
-        android:hint="Enter Todo Description"
-        android:layout_margin="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/idEdtTodoTitle"
+        android:gravity="start|top"
+        android:hint="Describe your task"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
-        android:gravity="start|top"
-        android:singleLine="false"
-        android:layout_above="@id/idBtnAddUpdate"
-        android:layout_below="@id/idEdtTodoTitle"/>
+        android:singleLine="false" />
 
-    <Button
+    <EditText
+        android:inputType="numberDecimal"
+        android:id="@+id/user_input_calories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/idEdtTodoDescription"
+        android:layout_marginHorizontal="10dp"
+        android:hint="Calories" />
+
+    <RadioGroup
+        android:layout_marginHorizontal="10dp"
+        android:layout_below="@id/user_input_calories"
+        android:checkedButton="@id/gained"
+        android:id="@+id/radio_group_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/gained"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Gained Calories" />
+
+        <RadioButton
+            android:id="@+id/lost"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Lost Calories" />
+    </RadioGroup>
+
+    <Button
         android:id="@+id/idBtnAddUpdate"
-        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Add Todo"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Add Todo" />
 
 </RelativeLayout>
