@@ -21,7 +21,6 @@ class frag1 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_frag1, container, false)
-        val iconIndex: Int = 0
         val profileButton = view.findViewById<RelativeLayout>(R.id.profile_1_bar)
         val globeButton = view.findViewById<RelativeLayout>(R.id.globeUsers2_bar)
         val signOutButton = view.findViewById<RelativeLayout>(R.id.signOut3_bar)
@@ -37,6 +36,7 @@ class frag1 : Fragment() {
                     Log.i("firebase", it.children.toString())
 
                     it.children.forEach {
+                        Log.i("key:::::",it.child("iconIndex").value.toString())
                         val id = it.child("id").value.toString()
                         val age = it.child("age").value.toString().toIntOrNull()
                         val email = it.child("email").value.toString()
@@ -45,7 +45,7 @@ class frag1 : Fragment() {
                         val userName = it.child("username").value.toString()
                         val weight = it.child("weight").value.toString().toIntOrNull()
                         val height = it.child("height").value.toString().toIntOrNull()
-                        val iconIndex = it.child("iconIndex").value.toString()
+                        val iconIndex1 = it.child("iconIndex").value.toString()
                         val caloriesBurn =
                             it.child("caloriesBurn").value.toString().toDoubleOrNull()
                         val caloriesGained =
@@ -56,11 +56,11 @@ class frag1 : Fragment() {
                             data.putString("firstName",firstName)
                             data.putString("lastName",lastName)
                             data.putString("userName",userName)
-                            data.putString("iconIndex",iconIndex)
+                            data.putString("iconIndex",iconIndex1)
 
                             data.putString(id,id)
 
-                            Log.i("Result::", iconIndex)
+                            Log.i("Result::", iconIndex1)
 
                             if (age != null) {
                                 data.putInt("age",age)
@@ -82,7 +82,6 @@ class frag1 : Fragment() {
                                 data.putDouble("caloriesGained",caloriesGained)
                             }
 
-                            Log.i("hi", "Hello")
                         }
 
                     }

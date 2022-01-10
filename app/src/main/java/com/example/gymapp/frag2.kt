@@ -45,12 +45,13 @@ class frag2 : Fragment() {
         view.findViewById<TextView>(R.id.calories_burned).text =
             requireArguments().getInt("caloriesGained").toString()
 
-        counter = requireArguments().getString("iconIndex").toString().toInt()
-        view.findViewById<ImageView>(R.id.user_icon).setImageResource(listIcons[counter!!])
+        requireArguments().getString("iconIndex").toString()
 
-        Log.d("index::", counter.toString())
+        Log.d("index::", requireArguments().getString("iconIndex").toString())
 
         val dashboardButton = view.findViewById<Button>(R.id.dashboard_button)
+
+        view.findViewById<ImageView>(R.id.user_icon).setImageResource(listIcons[counter!!])
 
         dashboardButton.setOnClickListener {
             findNavController().popBackStack()
