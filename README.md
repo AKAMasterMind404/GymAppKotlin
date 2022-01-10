@@ -1,6 +1,6 @@
 # Android-Study-Jams
 
-<h1><b>Gym App</b><h1>
+<h1><b>Gym App</b></h1>
 
 <b> Problem Statement: </b>
 
