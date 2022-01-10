@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 class globeFragment : Fragment() {
 
-    private lateinit var globalRecyler:RecyclerView
+    private lateinit var globalRecyler: RecyclerView
     private var user_global_list: MutableList<User> = mutableListOf(
 //    User(iconIndex = "1", username = "Username1"),
 //    User(iconIndex = "2", username = "Username2"),
@@ -36,11 +36,12 @@ class globeFragment : Fragment() {
         globalRecyler.layoutManager = LinearLayoutManager(context)
         globalRecyler.adapter = globeAdapter
 
-        val localList:MutableList<User> = mutableListOf()
+        val localList: MutableList<User> = mutableListOf()
 
-        FirebaseDatabase.getInstance().getReference("users").
-                get().addOnSuccessListener {
+        FirebaseDatabase.getInstance().getReference("users").get().addOnSuccessListener {
             it.children.forEach {
+                Log.i("ow::", it.child("iconIndex").value.toString())
+                Log.i("ow::", it.child("username").value.toString())
                 localList.add(
                     User(
                         iconIndex = it.child("iconIndex").value.toString(),
@@ -49,13 +50,14 @@ class globeFragment : Fragment() {
                 )
             }
 
-            user_global_list = localList
+            user_global_list.addAll(localList)
             globeAdapter.notifyDataSetChanged()
         }
 
         view.findViewById<FloatingActionButton>(R.id.gloablFAB)
             .setOnClickListener {
-                findNavController().navigate(R.id.action_globeFragment_to_frag1)
+                findNavController().popBackStack()
+//                R.id.action_globeFragment_to_frag1
             }
 
         return view
