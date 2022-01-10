@@ -1,6 +1,6 @@
 # Android-Study-Jams
 
-College Bus Tracking System
+<h1><b>Gym App</b><h1>
 
 <b> Problem Statement: </b>
 
