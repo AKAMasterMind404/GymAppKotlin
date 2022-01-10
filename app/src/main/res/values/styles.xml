@@ -5,4 +5,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
     </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+
+    <style name="Toolbar.DashBoardText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="Toolbar.SubTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textColor">#FFbdbdbd</item>
+        <item name="android:textSize">15dp</item>
+    </style>
 </resources>

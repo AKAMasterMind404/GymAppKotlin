@@ -57,6 +57,7 @@ class frag1 : Fragment() {
                             data.putString("lastName",lastName)
                             data.putString("userName",userName)
                             data.putString("iconIndex",iconIndex)
+
                             data.putString(id,id)
 
                             Log.i("Result::", iconIndex)

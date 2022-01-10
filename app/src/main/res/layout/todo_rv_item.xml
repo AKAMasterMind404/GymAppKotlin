@@ -1,61 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/idTVTodoCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
-    android:layout_margin="5dp"
-    app:cardElevation="4dp">
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="8dp">
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="5dp"
+        android:background="@color/blue"
+        app:cardElevation="8dp">
 
-        <TextView
-            android:id="@+id/idTVTodoTitle"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:padding="4dp"
-            android:text="Todo Title"
-            android:textColor="@color/white"
-            android:layout_toLeftOf="@id/idTVCheckBox"
-            android:textSize="18sp"/>
+            android:background="@color/blue"
+            android:paddingHorizontal="10dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/idTVTimestamp"
-            android:text="Timestamp"
-            android:textColor="@color/white"
-            android:layout_below="@id/idTVCheckBox"
-            android:layout_toLeftOf="@id/idTVDelete"
-            android:padding="4dp"
-            android:layout_margin="4dp"/>
-
-        <CheckBox
-            android:id="@+id/idTVCheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/idTVDelete"
-            android:layout_centerVertical="true"
-            android:buttonTint="@color/white"
-            android:checked="false"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_delete"
-            android:id="@+id/idTVDelete"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="5dp"
-            android:padding="4dp"/>
-
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/idTVTodoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_toLeftOf="@id/idTVDelete"
+                android:padding="4dp"
+                android:text="Todo Title"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp" />
 
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/idTVTimestamp"
+                android:text="Timestamp"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:layout_below="@id/idTVCheckBox"
+                android:layout_toLeftOf="@id/idTVDelete"
+                android:padding="4dp"
+                android:layout_margin="4dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete"
+                android:id="@+id/idTVDelete"
+                android:layout_toStartOf="@id/idTVCheckBox"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:padding="4dp"/>
+
+            <CheckBox
+                android:id="@+id/idTVCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="@color/white"
+                android:checked="false"/>
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.cardview.widget.CardView>
+
+

@@ -40,6 +40,10 @@ class frag2 : Fragment() {
             requireArguments().getInt("height").toString()
         view.findViewById<TextView>(R.id.weight).text =
             requireArguments().getInt("weight").toString()
+        view.findViewById<TextView>(R.id.calories_gained).text =
+            requireArguments().getInt("caloriesBurn").toString()
+        view.findViewById<TextView>(R.id.calories_burned).text =
+            requireArguments().getInt("caloriesGained").toString()
 
         counter = requireArguments().getString("iconIndex").toString().toInt()
         view.findViewById<ImageView>(R.id.user_icon).setImageResource(listIcons[counter!!])
