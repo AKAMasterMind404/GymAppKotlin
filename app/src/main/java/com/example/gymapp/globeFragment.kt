@@ -45,7 +45,8 @@ class globeFragment : Fragment() {
                 localList.add(
                     User(
                         iconIndex = it.child("iconIndex").value.toString(),
-                        username = it.child("username").value.toString()
+                        username = it.child("username").value.toString(),
+                        email = it.child("email").value.toString()
                     )
                 )
             }

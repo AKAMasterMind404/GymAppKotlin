@@ -21,6 +21,7 @@ class GlobalUserAdapter(val context: Context, var allUsers: List<User>) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val dpUser = itemView.findViewById<ImageView>(R.id.dp_user)
         val nameView = itemView.findViewById<TextView>(R.id.nameView)
+        val emailView = itemView.findViewById<TextView>(R.id.emailView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -37,6 +38,7 @@ class GlobalUserAdapter(val context: Context, var allUsers: List<User>) :
 
         holder.dpUser.setImageResource(listDp[proper.toInt()])
         holder.nameView.text = currentItem.username
+        holder.emailView.text = currentItem.email
     }
 
     override fun getItemCount(): Int {

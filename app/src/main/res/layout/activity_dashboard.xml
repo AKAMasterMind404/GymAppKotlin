@@ -14,6 +14,8 @@
         <androidx.appcompat.widget.Toolbar
             app:titleTextColor="@color/white"
             app:title="Dashboard"
+            app:titleTextAppearance="@style/Toolbar.DashBoardText"
+            android:paddingVertical="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.appbar.AppBarLayout>
@@ -24,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/appbar"
+        android:layout_marginTop="10dp"
         app:defaultNavHost="true"
         app:navGraph="@navigation/my_graph" />
 
