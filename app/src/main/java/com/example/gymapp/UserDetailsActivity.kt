@@ -101,7 +101,6 @@ class UserDetailsActivity : AppCompatActivity() {
                 }
             }
         } catch (e: Exception) {
-
             Log.d("Error", e.toString())
         }
     }

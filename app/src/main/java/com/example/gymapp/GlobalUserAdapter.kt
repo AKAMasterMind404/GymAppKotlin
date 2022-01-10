@@ -30,8 +30,12 @@ class GlobalUserAdapter(val context: Context, var allUsers: List<User>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem:User = allUsers[position]
+        var proper = currentItem.iconIndex.toString()
 
-        holder.dpUser.setImageResource(listDp[currentItem.iconIndex.toString().toInt()])
+        if(proper==null || proper=="")
+            proper = "0"
+
+        holder.dpUser.setImageResource(listDp[proper.toInt()])
         holder.nameView.text = currentItem.username
     }
 
