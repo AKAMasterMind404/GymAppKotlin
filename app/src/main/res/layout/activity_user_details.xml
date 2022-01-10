@@ -2,19 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="20dp"
-    android:layout_marginVertical="20dp">
+
+    android:background="@color/white"
+    android:paddingHorizontal="30dp"
+    android:paddingVertical="20dp">
 
 
     <TextView
         android:id="@+id/tvDetailsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:text="Wait for It!"
         android:textStyle="bold"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:textColor="@color/black"/>
 
     <TextView
@@ -34,7 +37,9 @@
         android:layout_below="@+id/tvDetailsSub"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
+        android:textSize="17sp"
+        android:drawableTint="@color/lightgrey"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:hint="Enter your First name"
         android:inputType="textPersonName"
@@ -48,6 +53,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:drawableTint="@color/lightgrey"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:hint="Enter your Last Name"
         android:inputType="textEmailAddress"
@@ -61,6 +68,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:drawableTint="@color/lightgrey"
         android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
         android:hint="Enter your Age"
         android:inputType="number"
@@ -74,6 +83,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:drawableTint="@color/lightgrey"
         android:drawableLeft="@drawable/ic_baseline_accessibility_new_24"
         android:hint="Enter your Height"
         android:inputType="numberDecimal"
@@ -87,6 +98,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:drawableTint="@color/lightgrey"
         android:drawableLeft="@drawable/ic_baseline_fitness_center_24"
         android:hint="Enter your Weight"
         android:inputType="numberDecimal"

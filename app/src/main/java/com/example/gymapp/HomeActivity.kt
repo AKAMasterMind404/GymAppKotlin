@@ -2,13 +2,10 @@ package com.example.gymapp
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
-import androidx.cardview.widget.CardView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +18,8 @@ class HomeActivity : AppCompatActivity(), TodoClickInterface, TodoClickDeleteInt
     TodoClickDoneInterface {
     lateinit var todosRV: RecyclerView
     lateinit var addFAB: FloatingActionButton
+
+    lateinit var dashboardButton: Button
     lateinit var viewModel: TodoViewModel
     private lateinit var auth: FirebaseAuth
 
@@ -31,33 +30,41 @@ class HomeActivity : AppCompatActivity(), TodoClickInterface, TodoClickDeleteInt
 
         todosRV = findViewById(R.id.idRVTodos)
         addFAB = findViewById(R.id.idFABAddTodo)
-        todosRV.layoutManager = LinearLayoutManager(this)
+        dashboardButton = findViewById(R.id.dashboard)
+
+        actionBar?.show()
 
         auth = FirebaseAuth.getInstance()
 
-        val logoutButton: Button = findViewById(R.id.btLogout)
-        logoutButton.setOnClickListener(){
-            auth.signOut()
-            startActivity(Intent(this, MainActivity::class.java))
-        }
-
+//        val logoutButton: Button = findViewById(R.id.btLogout)
+//        logoutButton.setOnClickListener {
+//            auth.signOut()
+//            startActivity(Intent(this, MainActivity::class.java))
+//        }
+        todosRV.layoutManager = LinearLayoutManager(this)
         val todoRVAdapter = TodoRVAdapter(this, this, this, this)
         todosRV.adapter = todoRVAdapter
-        viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(TodoViewModel::class.java)
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        ).get(TodoViewModel::class.java)
         viewModel.allTodos.observe(this, Observer { list ->
             list?.let {
                 todoRVAdapter.updateList(it)
             }
         })
 
-        addFAB.setOnClickListener{
+        addFAB.setOnClickListener {
             val intent = Intent(this@HomeActivity, AddEditTodoActivity::class.java)
             startActivity(intent)
         }
 
+        dashboardButton.setOnClickListener {
+            val intent = Intent(this@HomeActivity, Dashboard::class.java)
+            startActivity(intent)
+        }
 
     }
-
 
     override fun onTodoClick(todo: Todo) {
         val intent = Intent(this@HomeActivity, AddEditTodoActivity::class.java)
@@ -84,11 +91,9 @@ class HomeActivity : AppCompatActivity(), TodoClickInterface, TodoClickDeleteInt
 
     }
 
-
 }
 //{
 //
-//    private lateinit var auth: FirebaseAuth
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_home)

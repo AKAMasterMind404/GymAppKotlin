@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frag1">
+
+    <RelativeLayout
+        android:id="@+id/profile_1_bar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/icon_1"
+            android:src="@drawable/ic_baseline_person_24"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:tint="@color/grey" />
+
+        <TextView
+            android:id="@+id/text_option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/icon_1"
+            android:paddingStart="10dp"
+            android:text="My Profile"
+            android:textColor="@color/lightblack"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/globeUsers2_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_1_bar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:id="@+id/icon_2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_globe"
+            app:tint="@color/grey"/>
+
+        <TextView
+            android:id="@+id/text_option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/icon_2"
+            android:paddingStart="10dp"
+            android:text="Users"
+            android:textSize="20sp"
+            android:textColor="@color/lightblack"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/signOut3_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/globeUsers2_bar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:id="@+id/icon_3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_logout"
+            app:tint="@color/grey"/>
+
+        <TextView
+            android:id="@+id/text_option3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/icon_3"
+            android:paddingStart="10dp"
+            android:text="Sign out"
+            android:textSize="20sp"
+            android:textColor="@color/lightblack"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
